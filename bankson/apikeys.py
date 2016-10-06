@@ -7,3 +7,6 @@ class ApiKeys(object):
 
     def create(self, data):
         return self.base.post('/apikeys', json=data)
+
+    def remove(self, id):
+        return self.base.delete('/apikeys/' + str(id))

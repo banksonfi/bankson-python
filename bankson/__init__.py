@@ -39,6 +39,14 @@ class Bankson(object):
             raise RequestError('Request error', r)
         return r.json()
 
+    def delete(self, path):
+        r = requests.delete(self.base_url + '/' + path, headers=self.headers())
+        if r.status_code >= 400:
+            raise RequestError('Request error', r)
+        if r.status_code == 204:
+            return
+        return r.json()
+
     def headers(self):
         timestamp = str(int(time.time() * 1000))
         to_sign = self.api_key + timestamp
@@ -48,7 +56,7 @@ class Bankson(object):
 class RequestError(Exception):
     def __init__(self, message, response):
         super(RequestError, self).__init__(message)
-        if response.headers['content-type'].startswith('application/json'):
+        if response.headers.get('content-type', '').startswith('application/json'):
             body = response.json()
         else:
             body = { 'error': response.text }
