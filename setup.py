@@ -8,7 +8,7 @@ requires = [
 setup(
   name = 'bankson',
   packages = ['bankson'], # this must be the same as the name above
-  version = '0.1',
+  version = '0.2',
   install_requires=requires,
   description = 'Bankson API client',
   author = 'Codesense',
