@@ -5,7 +5,8 @@ class Payments(object):
     def list(self):
         return self.base.get('/payments')
 
-    def create(self, data):
+    def create(self, data, bank_account):
+        data['from'] = bank_account
         return self.base.post('/payments', json=data)
 
     def refresh(self):
