@@ -29,6 +29,14 @@ except RequestError as err:
 
 The snippet above will list all inbound reference payments. For more examples see [Official bankson.fi documentation](http://docs.bankson.fi)
 
+## Test mode
+
+To use Bankson API in test mode specify `test=True` while initializing:
+
+```python
+client = Bankson(api_key='', private_key='', test=True)
+```
+
 ## License
 
 The MIT License

@@ -11,7 +11,7 @@ setup(
   version = '0.1',
   install_requires=requires,
   description = 'Bankson API client',
-  author = 'Niklas Närhinen',
+  author = 'Codesense',
   author_email = 'niklas@codesense.fi',
   url = 'https://github.com/banksonfi/bankson-python', # use the URL to the github repo
   download_url = 'https://github.com/banksonfi/bankson-python/tarball/0.1', # I'll explain this in a second

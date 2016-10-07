@@ -19,6 +19,7 @@ class Bankson(object):
         self.api_key = kwargs['api_key']
         self.private_key = rsa.PrivateKey.load_pkcs1(kwargs['private_key'], 'PEM')
         self.base_url = kwargs.get('base_url', 'https://api.bankson.fi')
+        self.test = kwargs.get('test', False)
 
         self.apikeys = ApiKeys(self)
         self.bankaccounts = BankAccounts(self)
@@ -59,6 +60,8 @@ class Bankson(object):
         to_sign = self.api_key + timestamp
         signature = base64.b64encode(rsa.sign(to_sign, self.private_key, 'SHA-256'))
         additional['Authorization'] = 'BanksonRSA ApiKey=' + self.api_key + ', Timestamp=' + timestamp + ', Signature=' + signature
+        if (self.test):
+            additional['X-Bankson-Environment'] = 'Test'
         return additional
 
 class RequestError(Exception):
