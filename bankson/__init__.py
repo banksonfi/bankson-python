@@ -9,8 +9,8 @@ from bankson.bankaccountstatements import BankAccountStatements
 from bankson.bankaccounts import BankAccounts
 #from bankson.calls import Calls
 from bankson.certificates import Certificates
-#from bankson.inboundpayments import InboundPayments
-#from bankson.payments import Payments
+from bankson.inboundpayments import InboundPayments
+from bankson.payments import Payments
 #from bankson.webhooks import Webhooks
 
 class Bankson(object):
@@ -24,6 +24,8 @@ class Bankson(object):
         self.bankaccounts = BankAccounts(self)
         self.bankaccountstatements = BankAccountStatements(self)
         self.certificates = Certificates(self)
+        self.inboundpayments = InboundPayments(self)
+        self.payments = Payments(self)
 
 
     def me(self):
