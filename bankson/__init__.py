@@ -6,7 +6,7 @@ import base64
 from bankson.apikeys import ApiKeys
 #from bankson.applications import Applications
 #from bankson.bankaccountstatements import BankAccountStatements
-#from bankson.bankaccounts import BankAccounts
+from bankson.bankaccounts import BankAccounts
 #from bankson.calls import Calls
 from bankson.certificates import Certificates
 #from bankson.inboundpayments import InboundPayments
@@ -21,6 +21,7 @@ class Bankson(object):
         self.base_url = kwargs.get('base_url', 'https://api.bankson.fi')
 
         self.apikeys = ApiKeys(self)
+        self.bankaccounts = BankAccounts(self)
         self.certificates = Certificates(self)
 
 
