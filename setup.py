@@ -5,16 +5,18 @@ requires = [
         'requests>=2.11.1'
 ]
 
+VERSION='0.5'
+
 setup(
   name = 'bankson',
-  packages = ['bankson'], # this must be the same as the name above
-  version = '0.4',
+  packages = ['bankson'],
+  version = VERSION,
   install_requires=requires,
   description = 'Bankson API client',
   author = 'Codesense',
   author_email = 'niklas@codesense.fi',
-  url = 'https://github.com/banksonfi/bankson-python', # use the URL to the github repo
-  download_url = 'https://github.com/banksonfi/bankson-python/tarball/0.1', # I'll explain this in a second
+  url = 'https://github.com/banksonfi/bankson-python',
+  download_url = 'https://github.com/banksonfi/bankson-python/tarball/' + VERSION,
   keywords = ['bankson'], # arbitrary keywords
   classifiers = [],
 )
