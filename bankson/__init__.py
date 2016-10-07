@@ -33,8 +33,6 @@ class Bankson(object):
 
     def get(self, path, **kwargs):
         r = requests.get(self.base_url + path, headers=self.headers(kwargs.get('headers', {})))
-        if r.status_code >= 400:
-            raise RequestError('Request error', r)
         return self.handle_response(r)
 
     def post(self, path, **kwargs):
