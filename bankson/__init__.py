@@ -28,19 +28,19 @@ class Bankson(object):
         return self.get('/me')
 
     def get(self, path):
-        r = requests.get(self.base_url + '/' + path, headers=self.headers())
+        r = requests.get(self.base_url + path, headers=self.headers())
         if r.status_code >= 400:
             raise RequestError('Request error', r)
         return r.json()
 
     def post(self, path, **kwargs):
-        r = requests.post(self.base_url + '/' + path, headers=self.headers(), **kwargs)
+        r = requests.post(self.base_url + path, headers=self.headers(), **kwargs)
         if r.status_code >= 400:
             raise RequestError('Request error', r)
         return r.json()
 
     def delete(self, path):
-        r = requests.delete(self.base_url + '/' + path, headers=self.headers())
+        r = requests.delete(self.base_url + path, headers=self.headers())
         if r.status_code >= 400:
             raise RequestError('Request error', r)
         if r.status_code == 204:
