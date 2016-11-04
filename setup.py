@@ -5,7 +5,7 @@ requires = [
         'requests>=2.11.1'
 ]
 
-VERSION='0.5'
+VERSION='0.6'
 
 setup(
   name = 'bankson',
