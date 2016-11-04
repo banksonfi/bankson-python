@@ -16,5 +16,5 @@ class Certificates(object):
     def remove(self, id):
         return self.base.delete('/certificates/' + str(id))
 
-    def renew(self, id, data):
+    def renew(self, id, data = {}):
         return self.base.post('/certificates/' + str(id) + '/renew', json=data)
