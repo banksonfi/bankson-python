@@ -10,7 +10,7 @@ class Certificates(object):
         files = { 'certificate': file }
         return self.base.post('/certificates/upload', files=files, data=data)
 
-    def request(self, file, data):
+    def request(self, data):
         return self.base.post('/certificates/request', json=data)
 
     def remove(self, id):
